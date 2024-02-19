@@ -1,4 +1,4 @@
-# Streaming Portal Levels - Demo Project
+# Streaming Portal Levels - Example Project
 
 **Made By:** TeeKru Games (Teella and Krucifear)
 
