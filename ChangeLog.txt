@@ -1,0 +1,52 @@
+### Version 2.0.0 - 2024-02-18
+
+#### Added
+
+- **Portal Actor:**
+  - Included necessary headers for functionality.
+  - Implemented dynamic network relevance settings.
+  - Introduced a namespace for better code organization.
+  - Added a console variable for local projection data control.
+
+- **Portal Hub:**
+  - Added properties for dynamic network relevance and render texture resolution.
+  - Modified render texture creation function signature for flexibility.
+  - Established friendship with a related component for access control.
+
+- **Portal Level Stream Manager:**
+  - Added a method to determine level unload eligibility based on usage.
+  - Ensured proper communication with related components.
+
+- **Portal Camera Manager Component:**
+  - Declared a camera component as a friend class for streamlined access.
+  - Established friendship with another component for seamless integration.
+
+- **Portal Player Component:**
+  - Implemented logic for dynamic settings management and network replication.
+  - Optimized methods to handle different network modes efficiently.
+
+#### Changed
+
+- **Portal Actor:**
+  - Adjusted methods to support network replication and dynamic settings properly.
+
+- **Portal Hub:**
+  - Tweaked render texture methods and initialization for seamless network replication.
+
+- **Portal Level Stream Manager:**
+  - Modified methods to ensure smooth network replication and accurate level unloading.
+
+- **Portal Camera Manager Component:**
+  - Updated portal activation logic to enhance functionality.
+  - Removed redundant comments and empty lines for cleaner code.
+
+- **Portal Player Component:**
+  - Optimized methods to handle various network modes and dynamic settings effectively.
+  - Integrated network replication support for improved performance.
+
+### For more detailed changes, please refer to the full changelog provided above.
+
+
+### Version 1.0.0 - 2023-06-13
+
+Initial Release
