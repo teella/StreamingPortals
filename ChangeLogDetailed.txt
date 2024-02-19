@@ -1,5 +1,33 @@
 ### [2.0.0] - 2024-02-18
 
+### Added SPL_Library:
+
+- Added a namespace StreamingPortalHelper containing a class SPL_Library.
+- Declared the class SPL_Library with the following public static functions:
+  - GetNetPlayerComponent: Retrieves the USP_PortalNetPlayerComponent associated with the player character.
+  - GetViewPortResolution: Retrieves the resolution of the viewport.
+  - IsLocalOwned: Checks if a specified actor is locally owned.
+  - CreateRenderTexture: Returns a render texture based on Portal Hub RT settings for portals needing their own render texture.
+
+
+### Added USP_PortalNetPlayerComponent:
+
+- Added `USP_PortalNetPlayerComponent` class definition.
+- Added `SetServerClientMovement` function to toggle client movement settings for smooth illusion.
+- Added `ActivatePortal` function to activate portals on the server.
+- Added `SetServerInPortal` function to set portal state on the server.
+- Added `SetLevelBounds` function to set level bounds on the server.
+- Added `GetInPortal` function to retrieve portal state.
+- Added `GetViewPortResolution` function to get viewport resolution.
+- Added `SetServerNetRelevance` function to toggle relevance settings when interacting with portals.
+- Added `CreateRenderTexture` function as a utility to create render textures.
+- Added `ServerLoadLevel` function to load levels on the server.
+- Added `SetServerShouldBeLoaded` function to update ShouldBeLoaded status on the server.
+- Added `M_ActivatePortal` multicast function to activate portals on all clients.
+- Added `M_SetServerInPortal` multicast function to set portal state on all clients.
+- Defined member variables and functions to manage portal interactions and synchronization.
+
+
 ### Changes in `SP_PortalActor.cpp`:
 
 - Added inclusion of `"Components/SP_PortalNetPlayerComponent.h"` at line 6.

@@ -2,6 +2,9 @@
 
 #### Added
 
+- **Added SPL_Library**
+- **Added SPL_PortalNetPlayerComponent**
+
 - **Portal Actor:**
   - Included necessary headers for functionality.
   - Implemented dynamic network relevance settings.
