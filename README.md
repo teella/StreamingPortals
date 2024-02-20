@@ -3,8 +3,8 @@
 **Made By:** TeeKru Games (Teella and Krucifear)
 
 ### ChangeLog:
-- [Change Log](./ChangeLog.md) 
-- [Detailed Change Log](ChangeLogDetailed.md) 
+- [Change Log](repo/blob/master/ChangeLog.md) 
+- [Detailed Change Log](repo/blob/master/ChangeLogDetailed.md) 
 
 ---
 
