@@ -67,9 +67,9 @@ All example content, code, and images are created by TeeKru Games, unless source
 
 - StreamingPortal (Runtime)
 
-### Blueprint Count: 22
-### C++ Classes Count: 7
-### Network Replicated: No
+### Blueprint Count: 23
+### C++ Classes Count: 9
+### Network Replicated: Yes
 ### Supported Platforms: Windows
 ### Documentation: [Streaming Portal Levels Documentation](https://teekrugames.com/SPL/StreamingPortalLevels.pdf)
 ### Example Project: [Streaming Portals Example Project](https://teekrugames.com/SPL/StreamingPortals.zip)
