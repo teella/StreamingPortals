@@ -2,6 +2,12 @@
 
 **Made By:** TeeKru Games (Teella and Krucifear)
 
+### ChangeLog:
+- [Change Log](ChangeLog.md) 
+- [Detailed Change Log](ChangeLogDetailed.md) 
+
+---
+
 ### Links:
 - [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/streaming-portal-levels)
 - [Video](https://www.youtube.com/watch?v=-iGnsRno5e4)
