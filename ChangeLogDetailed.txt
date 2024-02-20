@@ -48,60 +48,75 @@
 
 ### Changes in `SP_PortalHub.h`:
 
-- Added new properties:
-  - `DynamiclySetNetRelevance` (line 64): Controls whether to set `AlwaysRelevant` and `NetCullDistanceSquared` dynamically.
-  - `AlwaysNetRelevant` (line 68): If true, sets `AlwaysRelevant` to true and `NetCullDistanceSquared` to 0 on BeginPlay.
-  - `bUseOverrideRenderTextureResolution` (line 74): Enables overriding render texture resolution.
-  - `OverrideRenderTextureResolution` (line 78): Used to set the resolution manually if automatic resolution fails.
-- Modified `CreateRenderTexture` function signature (line 151): Changed to non-static and added parameters for quality, format, and scale.
-- Added `USP_PortalNetPlayerComponent` as a friend class (line 176).
+- Added new property `DynamiclySetNetRelevance` with default value `true` at line 65.
+- Added new property `AlwaysNetRelevant` with default value `false` at line 69.
+- Added new property `bUseOverrideRenderTextureResolution` with default value `false` at line 73.
+- Added new property `OverrideRenderTextureResolution` with default value `(1680, 1050)` at line 77.
+- Modified the `CreateRenderTexture` method to be a non-static member function with the same signature as before at line 81.
+- Added `UObject* WorldContextObject` parameter to the `CreateRenderTexture` method at line 82.
+- Renamed `RenderTextureQuality` to `InRenderTextureQuality`, `RenderTextureFormat` to `InRenderTextureFormat`, and `RenderTextureScale` to `OutRenderTextureScale` in the `CreateRenderTexture` method signature at line 82.
+- Removed the `static` specifier from the `CreateRenderTexture` method declaration at line 82.
+- Added `friend class USP_PortalNetPlayerComponent;` declaration at line 184.
 
 ### Changes in `SP_PortalHub.cpp`:
 
 - Added inclusion of `"Components/SP_PortalNetPlayerComponent.h"` at line 7.
-- Removed the namespace and associated function `SP_GetTextureResolution` at lines 47-104.
-- Added inclusion of `"Library/SPL_Library.h"` at line 54.
-- Added initialization of `bReplicates`, `bAlwaysRelevant`, and `NetCullDistanceSquared` at lines 80-82.
-- Modified `CreateOrGetPortalHub()` method to use `SPL_PortalHub::GlobalPortalHub` instead of `GlobalPortalHub` at lines 101-118.
-- Modified `CreateRenderTexture()` method to use `StreamingPortalHelper::SPL_Library::CreateRenderTexture` at lines 125-138.
-- Modified `CreateRenderTextureQuick()` method to return `nullptr` if not in client or standalone mode at lines 160-163.
-- Modified `GetRenderTexture()` method to return `nullptr` if not in client or standalone mode at lines 175-178.
-- Modified `BeginPlay()` method to create render texture only in standalone mode at lines 190-194.
-- Modified `EndPlay()` method to use `SPL_PortalHub::GlobalPortalHub` instead of `GlobalPortalHub` at line 204.
-- Modified `ResolvePortalPairs()` method to use `GetFName()` instead of direct comparison for portal names at lines 271-284.
-- Modified `RemovePortalActor()` method to handle cleaning up target portal and disabling tick if valid at lines 292-315.
+- Added inclusion of `"Library/SPL_Library.h"` at line 10.
+- Added initialization of `bReplicates`, `bAlwaysRelevant`, and `NetCullDistanceSquared` at lines 70-72.
+- Removed the namespace `namespace` and its content.
+- Changed the `CreateOrGetPortalHub` method to use `SPL_PortalHub::GlobalPortalHub` instead of `GlobalPortalHub` at lines 34-36, 44, and 48.
+- Changed the `CreateOrGetPortalHub` method to use `World` instead of `WorldContextObject` directly at lines 37-38.
+- Changed the `CreateOrGetPortalHub` method to use `World->PersistentLevel->GetWorld()` instead of `WorldContextObject->GetWorld()->PersistentLevel->GetWorld()` at line 45.
+- Changed the `CreateRenderTexture` method to use `StreamingPortalHelper::SPL_Library::CreateRenderTexture` instead of its own implementation at line 97.
+- Changed the `CreateRenderTextureQuick` method to return `nullptr` if the network mode is not client or standalone at lines 143-145.
+- Changed the `GetRenderTexture` method to return `nullptr` if the network mode is not client or standalone at lines 155-157.
+- Modified the `BeginPlay` method to initialize `bReplicates`, `bAlwaysRelevant`, and `NetCullDistanceSquared` and check for network mode at lines 191-194.
+- Modified the `EndPlay` method to use `SPL_PortalHub::GlobalPortalHub` instead of `GlobalPortalHub` at line 225.
+- Modified the `ResolvePortalPairs` method to use `UEnum::GetValueAsString(TEXT("Engine.ENetRole"), GetLocalRole())` instead of a hardcoded string at line 283.
+- Modified the `RemovePortalActor` method to use `IsValid()` instead of `!IsNull()` at lines 349-351.
+- Modified the `RemovePortalActor` method to properly handle `TargetPortal` and `SetActorTickEnabled` at lines 362-372.
+
 
 ### Changes in `SP_PortalLevelStreamManager.h`:
 
-- Added `USP_PortalNetPlayerComponent` as a friend class (line 91).
-- Added a new function:
-  - `ServerCanUnload` (line 195): Returns true if the level is not in use by any player or visible by any portal, indicating it can be unloaded.
+- Added `NetPlayerCompList` member variable at line 87.
+- Added `friend class USP_PortalNetPlayerComponent;` declaration at line 90.
+- Added `ServerLoadLevel` method declaration at line 123.
+- Added `OnServerLevelLoaded` method declaration at line 130.
+- Added `ServerCanUnload` method declaration at line 137.
+- Added `CreateStreamingLevel` method declaration at line 140.
 
 ### Changes in `SP_PortalLevelStreamManager.cpp`:
 
-- Added inclusion of `"Components/SP_PortalNetPlayerComponent.h"` at line 7.
-- Added inclusion of `"Library/SPL_Library.h"` at line 12.
-- Added initialization of `bReplicates`, `bAlwaysRelevant`, and `NetCullDistanceSquared` at lines 38-40.
-- Modified `BeginPlay()` method to only run on client or standalone mode at lines 50-63.
-- Added `ServerCanUnload()` method to determine if the server can unload the level at lines 87-139.
-- Modified `Tick()` method to only run on client or standalone mode at lines 156-194.
-- Modified `CheckShowLevel()` method to only run on client or standalone mode at lines 222-261.
-- Modified `LoadLevel()` method to only run initialization on client or standalone mode at lines 289-325.
-- Modified `InitStreamingLevel()` method to only run on client or standalone mode at lines 335-348.
-- Modified `SetLevelBounds()` method to notify the server of level bounds change at lines 369-383.
-- Modified `OnLevelShown()` method to only run on client or standalone mode at lines 449-458.
+- Added include for `"Components/SP_PortalNetPlayerComponent.h"` at line 5.
+- Added `USP_PortalNetPlayerComponent` include at line 6.
+- Added `Engine/Engine.h` include at line 10.
+- Added `#include "Library/SPL_Library.h"` at line 11.
+- Initialized `bReplicates`, `bAlwaysRelevant`, and `NetCullDistanceSquared` in the constructor at lines 18-20.
+- Modified `BeginPlay` method to include loading logic for clients and standalone instances at lines 40-68.
+- Added `ServerCanUnload` method at lines 70-103.
+- Added logic to skip execution on the server at line 105.
+- Modified `Tick` method to handle network modes at lines 105-128.
+- Modified `CheckShowLevel` method to handle network modes at lines 131-224.
+- Added `ServerLoadLevel` method at lines 226-243.
+- Added `CreateStreamingLevel` method at lines 257-340.
+- Modified `LoadLevel` method to include server-side loading logic at lines 342-381.
+- Modified `InitStreamingLevel` method to include server-side initialization logic at lines 393-419.
+- Added `OnServerLevelLoaded` method at lines 421-446.
+
 
 
 ### Changes in `SP_PortalActorComponent.cpp`:
 
-- Added inclusion of `"Components/SP_PortalNetPlayerComponent.h"` at line 7.
-- Added inclusion of `"Library/SPL_Library.h"` at line 13.
-- Set `SetIsReplicatedByDefault(false)` at line 28.
-- Modified `BeginPlay()` method to use `GetWorld()->PersistentLevel` instead of `GetCurrentLevel()` at line 57.
-- Added a check to ensure the `PortalTwin` component has the tag "PortalTwin" at line 70.
-- Added logic to hide the `PortalTwin` sooner on remote machines at lines 78-87.
-- Modified `ActivatePortal()` method to handle replication and adjust player location and rotation accordingly at lines 94-229.
-- Added logic to adjust player location and rotation for networked characters at lines 201-215.
+- Added `#include "Components/SP_PortalNetPlayerComponent.h"` at line 7.
+- Added `#include "Library/SPL_Library.h"` at line 8.
+- Set `SetIsReplicatedByDefault(false);` at line 29.
+- Modified the initialization of `PortalHub` at line 68 to `PortalHub = ASP_PortalHub::CreateOrGetPortalHub(this);`.
+- Added a check to ensure the component tags of `PortalTwin` include `FName(TEXT("PortalTwin"))` at line 76.
+- Added a condition to hide `PortalTwin` on remote machines at lines 95-100.
+- Added `NewLoc` variable declaration at line 198.
+- Modified the teleportation logic at lines 219-237 to handle player characters and their network components.
+
 
 ### Changes in `SP_PortalCameraManagerComponent.h`:
 
@@ -112,25 +127,23 @@
 
 ### Changes in `SP_PortalCameraManagerComponent.cpp`:
 
-- Added inclusion of `"Runtime/Launch/Resources/Version.h"` at line 4.
-- Introduced a namespace `SPL_PortalCameraManagerComponent` containing utility functions for finding camera components and cameras at lines 6-67.
-- Added a call to `SetIsReplicatedByDefault(false)` at line 22.
-- Modified `ActivatePortal()` method to use `SPL_PortalCameraManagerComponent::SP_FindCamera(PlayerCameraManager)` instead of `SP_FindCamera(PlayerCameraManager)` at line 365.
-- Added logic to prevent the camera and `PortalTwin` from being behind the portal simultaneously at lines 371-380.
+- Added namespace `SPL_PortalCameraManagerComponent` containing utility functions `SP_FindCameraComponent` and `SP_FindCamera`.
+- Set `SetIsReplicatedByDefault(false);` at line 25.
+- Moved the `SP_FindCameraComponent` and `SP_FindCamera` functions into the `SPL_PortalCameraManagerComponent` namespace.
+- Modified the `ActivatePortal` function at lines 302-321 to use the `SP_FindCamera` function from the new namespace.
+- Added a check to ensure that the camera and `PortalTwin` are not behind the portal at lines 359-375. If they are, a message is logged, indicating that the camera teleport is starting.
 
 
 ### Changes in `SP_PortalPlayerComponent.cpp`:
 
-- Added inclusion of `"Components/SP_PortalNetPlayerComponent.h"` at line 3.
-- Added inclusion of `"Library/SPL_Library.h"` at line 6.
-- Added a call to `SetIsReplicatedByDefault(false)` at line 35.
-- Modified `BeginPlay()` method to skip further initialization if not in client or standalone mode at lines 42-49.
-- Added logic to set component tags for `PortalTwin` if not already present at lines 58-61.
-- Modified `EndPlay()` method to only execute cleanup if in client or standalone mode at lines 78-92.
-- Modified `CustomTick()` method to skip further processing if not in client or standalone mode at lines 101-103.
-- Modified `ActivatePortal()` method to only execute if the owner character is locally owned at lines 215-235.
-- Modified `HasOverlappedPortal()` method to only execute if `PortalCameraComponent` is valid at lines 238-257.
-- Modified `TrackPortal()` method to consider if the owner character is locally controlled or in a simulated proxy role at various places throughout the method, ensuring proper functionality in networked scenarios at lines 292-395.
+- Added include directive for `"Components/SP_PortalNetPlayerComponent.h"` at line 2.
+- Set `SetIsReplicatedByDefault(false);` at line 34.
+- Added a check to skip initialization if the net mode is not client or standalone at lines 40-49.
+- Modified the `EndPlay` function at lines 71-87 to perform cleanup only if the net mode is client or standalone.
+- Added a check to skip custom tick processing if the net mode is not client or standalone at lines 98-103.
+- Modified the `ActivatePortal` function at lines 133-240 to ensure that the activation logic is only executed for locally owned characters.
+- Added a check to skip portal tracking if the net mode is not client or standalone at lines 249-251 and 255-257.
+- Modified the `TrackPortal` function at lines 319-393 to ensure that the tracking logic is only executed for locally owned characters.
 
 
 ### [1.0.0] - 2023-06-13
