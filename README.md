@@ -6,7 +6,11 @@
 - [Change Log](ChangeLog.md) 
 - [Detailed Change Log](ChangeLogDetailed.md) 
 
+Current Marketplace Release: **1.0.0**  
+Pending Marketplace Release: **2.0.0**  
+
 ---
+
 ### Download Project:
 
 If you do not have git installed, you can download the project as a zip file. Simply click on 'Code' and then select 'Download Zip'. See image below.
