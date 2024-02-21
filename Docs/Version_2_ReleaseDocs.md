@@ -23,7 +23,7 @@ It's important to observe that the window portals are configured with the 'Use O
 ### 3 - Fix for Example Project
 
  Disconnected the pin to the Intel XeSS Quality Mode Info. If you add the XeSS plugin to your project, simplly hook this back up in BP_ThirdPersonGameMode.  
- ![](/IntelXeSSFix.jpg?raw=true)  
+ ![](/Images/IntelXeSSFix.jpg?raw=true)  
   
 ----
 ### 4- Networked Streaming Level Portals is now supported.
