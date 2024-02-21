@@ -1,8 +1,8 @@
 # Streaming Portal Levels - Example Project
 
-**Made By:** TeeKru Games (Teella and Krucifear)
-<img src="Images/TeeKru_GPlayGameLogo.png" alt="drawing" width="200"/>
-
+**Made By:** TeeKru Games (Teella and Krucifear)  
+<img src="Images/TeeKru_GPlayGameLogo.png" width="100"/>  
+  
 ### ChangeLog:
 - [Change Log](ChangeLog.md) 
 - [Detailed Change Log](ChangeLogDetailed.md) 
