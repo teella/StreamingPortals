@@ -49,6 +49,9 @@ SourceArt/**/*.tga
 Binaries/*
 Plugins/*/Binaries/*
 
+# Ignore StreamingPortal Plugin
+Plugins/StreamingPortal/*
+
 # Builds
 Build/*
 
