@@ -1,6 +1,32 @@
 # Version 2 Release Documentation
 
-### Networked Streaming Level Portals is now supported.
+#### 1 - Override Render Texture Resolution Settings.  
+#### 2 - Added Shack Example to the demonstration level.
+#### 3 - Fix for Example Project IntelXeSS in blueprint
+#### 4 - Networked Streaming Level Portals is now supported.
+----
+
+### 1 - Override Render Texture Resolution Settings.
+
+PortalHub settings configured to override resolution settings for render textures. This adjustment is typically required only in cases where the automatic resolution check fails to function correctly.  
+![](/Images/ShackImage.jpg?raw=true)  
+
+----
+### 2 - Added Shack Example to the demonstration level.
+
+The Shack Example is a unique structure designed to appear small from the outside but spacious within. It seamlessly integrates into the existing level without loading a skysphere. Notably, it features a functional window allowing both interior and exterior views.  
+  
+It's important to observe that the window portals are configured with the 'Use Own Render Texture' option enabled. This ensures smooth functionality, allowing both the door and windows to remain active simultaneously. Additionally, the interior render distance is set to 3000, facilitating clear views through the door or window from any position within the shack!  
+![](/Images/ShackImage.jpg?raw=true)
+
+----
+### 3 - Fix for Example Project
+
+ Disconnected the pin to the Intel XeSS Quality Mode Info. If you add the XeSS plugin to your project, simplly hook this back up in BP_ThirdPersonGameMode.  
+ ![](/IntelXeSSFix.jpg?raw=true)  
+  
+----
+### 4- Networked Streaming Level Portals is now supported.
 
 Quick Start:  
   
