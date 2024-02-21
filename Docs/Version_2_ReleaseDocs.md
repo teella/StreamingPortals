@@ -9,7 +9,7 @@
 ### 1 - Override Render Texture Resolution Settings.
 
 PortalHub settings configured to override resolution settings for render textures. This adjustment is typically required only in cases where the automatic resolution check fails to function correctly.  
-![](/Images/ShackImage.jpg?raw=true)  
+![](/Images/SP_PortalHubTextureSettings.jpg?raw=true)  
 
 ----
 ### 2 - Added Shack Example to the demonstration level.
