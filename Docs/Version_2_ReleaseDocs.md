@@ -1,5 +1,12 @@
-# Version 2 Release Documentation
+### Version 2 Release Documentation
 
+# Networked Streaming Level Portals is now supported.
+
+Quick Start:  
+  
+Just add a couple of portals and include the SL_PortalNetPlayerComponent in your main player character blueprint or class make sure Actor Replicates is true. That's all you need!  
+  
+See Image Below  
 
 ![](/Images/SP_PortalNetPlayerComponent.jpg?raw=true)
 
