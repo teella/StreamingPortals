@@ -1,6 +1,6 @@
-### Version 2 Release Documentation
+# Version 2 Release Documentation
 
-# Networked Streaming Level Portals is now supported.
+### Networked Streaming Level Portals is now supported.
 
 Quick Start:  
   
@@ -10,7 +10,7 @@ See Image Below
 
 ![](/Images/SP_PortalNetPlayerComponent.jpg?raw=true)
 
-# How it all works
+### How it all works
 
 Streaming Portal Levels adopts a methodology similar to that of 'Level Streaming Volumes' utilized in Unreal Engine, as documented [here](https://docs.unrealengine.com/5.3/en-US/level-streaming-volumes-reference-in-unreal-engine/).
 
