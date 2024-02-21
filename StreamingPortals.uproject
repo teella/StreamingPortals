@@ -10,6 +10,11 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "StreamingPortal",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/968dbb67950143ec977d3c5e93ee9d61"
 		}
 	]
 }
