@@ -7,6 +7,13 @@
 - [Detailed Change Log](ChangeLogDetailed.md) 
 
 ---
+### Download Project:
+
+If you do not have git installed, you can download the project as a zip file. Simply click on 'Code' and then select 'Download Zip'. See image below.
+
+![](Images/GitHubDownload.jpg?raw=true)
+
+---
 
 ### Links:
 - [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/streaming-portal-levels)
