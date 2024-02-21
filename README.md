@@ -1,4 +1,4 @@
-# Streaming Portal Levels - Example Project
+# Streaming Portal Levels - Example Project (Unreal 5.2 and 5.3)
 
 **Made By:** TeeKru Games (Teella and Krucifear)  
 <img src="Images/TeeKru_GPlayGameLogo.png" width="150"/>  
