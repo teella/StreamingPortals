@@ -64,7 +64,7 @@ Conversely, if your Actor is set to Not Replicate and is configured as 'OnlyRele
 2. **Always Net Relevant:**
    - This setting configures 'bAlwaysRelevant' and 'NetCullDistanceSquared' to zero.
 
-3. **Unload Level on Server:**
+3. **Experimental Unload Level on Server:**
    - This functionality attempts to load and unload streaming levels on the server when they are no longer in use.
    - In Unreal Engine 5.2, a warning may appear in the console, but this seems to be an editor-only issue and can be safely ignored. This issue does not occur in version 5.3.
 
