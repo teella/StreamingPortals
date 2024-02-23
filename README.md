@@ -8,8 +8,7 @@
 - [Detailed Change Log](ChangeLogDetailed.md)  
     - [Version 2 Release Notes](Docs/Version_2_ReleaseDocs.md)  
 
-Current Marketplace Release: **1.0.0**  
-Pending Marketplace Release: **2.0.0**  
+Current Marketplace Release: **2.0.0**  
 
 ---
 
