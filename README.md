@@ -26,7 +26,7 @@ If you do not have git installed, you can download the project as a zip file. Si
 - [Video](https://www.youtube.com/watch?v=-iGnsRno5e4)
 - [Demo](https://teekrugames.com/SPL/StreamingPortalLevels.zip)
 - [Discord](https://discord.gg/mjgDTYthm9)
-- [Documentation](https://teekrugames.com/SPL/StreamingPortalLevels.pdf)
+- [Documentation](https://teekrugames.com/SPL/StreamingPortalLevels_Version2.pdf)
 - [RoadMap](https://trello.com/b/DQ224cnR/stream-portal-levels-roadmap)
 - [Step1 Install and Enable](https://www.youtube.com/watch?v=e509qLxdKC0)
 - [Tutorial 1 Video](https://www.youtube.com/watch?v=SIklAPC1eDE)
@@ -90,8 +90,8 @@ All example content, code, and images are created by TeeKru Games, unless source
 ### C++ Classes Count: 9
 ### Network Replicated: Yes
 ### Supported Platforms: Windows
-### Documentation: [Streaming Portal Levels Documentation](https://teekrugames.com/SPL/StreamingPortalLevels.pdf)
-### Example Project: [Streaming Portals Example Project](https://teekrugames.com/SPL/StreamingPortals.zip)
+### Documentation: [Streaming Portal Levels Documentation](https://teekrugames.com/SPL/StreamingPortalLevels_Version2.pdf)
+### Example Project: [Streaming Portals Example Project](https://github.com/teella/StreamingPortals)
 
 ### Important/Additional Notes:
 
