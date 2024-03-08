@@ -1,9 +1,13 @@
-### [2.0.1] - 2024-03-07  
+### [2.0.1] - 2024-03-08  
 ### Changes in `SP_PortalActorComponent`:  
 - Added 4 new helpers for working with custom Player Camera Managers  
   - Added helper functions for transforming velocity, rotation, and location based on portal transforms.  
   - Added a helper function to test if a location is closer to the target portal.  
   - Added a function to check if a portal is being tracked.  
+- Added OnCreatePortalTwinCallBack binding  
+  
+### Changes in `SP_PortalCameraManagerComponent`:  
+- Updated `TeleportCamera()` to handle cases where `CameraParent` can be null, ensuring early firing of the teleport callback for custom camera managers.  
   
 ### Fix in `SP_PortalActorComponent`:  
 - InitializeComponent: check to ensure we are in the game world  
