@@ -1,3 +1,14 @@
+### [2.0.1] - 2024-03-07  
+### Changes in `SP_PortalActorComponent`:  
+- Added 4 new helpers for working with custom Player Camera Managers  
+  - Added helper functions for transforming velocity, rotation, and location based on portal transforms.  
+  - Added a helper function to test if a location is closer to the target portal.  
+  - Added a function to check if a portal is being tracked.  
+  
+### Fix in `SP_PortalActorComponent`:  
+- InitializeComponent: check to ensure we are in the game world  
+  
+  
 ### [2.0.0] - 2024-02-18
 
 ### Added SPL_Library:
