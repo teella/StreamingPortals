@@ -11,7 +11,7 @@
 ### Changes in `SP_PortalCameraManagerComponent`:  
 - Updated `TeleportCamera()` to handle cases where `CameraParent` can be null, ensuring early firing of the teleport callback for custom camera managers.  
   
-### Fix in `SP_PortalActorComponent`:  
+### Fix in `SP_PortalNetPlayerComponent`:  
 - InitializeComponent: check to ensure we are in the game world  
   
   
