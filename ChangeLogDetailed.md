@@ -30,7 +30,8 @@
 - InitializeComponent: check to ensure we are in the game world  
   
 ### Fix in `SP_PortalHub`:  
-- `ResolvePortalPairs()` get reference for PortalPair  
+- `ResolvePortalPairs()` and `RemovePortalActor` get reference for PortalPair  
+- `RemovePortalLevelManager` clean up Portal Actors on remove  
   
 ## [2.0.0] - 2024-02-18
 
