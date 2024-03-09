@@ -9,9 +9,14 @@
 ### Changes in `SP_PortalCameraManagerComponent`:  
 - Updated `TeleportCamera()` to handle cases where `CameraParent` can be null, ensuring early firing of the teleport callback for custom camera managers.  
   
+### Changes in `SP_PortalActor`:  
+- added helper GetStartCapture(), A helper function to check if the portal is actively running a scene capture  
+  
 ### Fix in `SP_PortalNetPlayerComponent`:  
 - InitializeComponent: check to ensure we are in the game world  
   
+### Fix in `SP_PortalHub`:  
+- `ResolvePortalPairs()` get reference for PortalPair  
   
 ### [2.0.0] - 2024-02-18
 
