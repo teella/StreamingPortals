@@ -5,6 +5,7 @@
   - Added helper functions for transforming velocity, rotation, and location based on portal transforms.  
   - Added a helper function to test if a location is closer to the target portal.  
   - Added a function to check if a portal is being tracked.  
+  - Added a helper to test if the player is at the target portal  
 - Added OnCreatePortalTwinCallBack binding  
   
 ### Changes in `SP_PortalCameraManagerComponent`:  
