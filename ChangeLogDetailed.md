@@ -1,4 +1,5 @@
-### [2.0.1] - 2024-03-08  
+## [2.0.1] - 2024-03-08  
+  
 ### Changes in `SP_PortalActorComponent`:  
 - Added 4 new helpers for working with custom Player Camera Managers  
   - Added helper functions for transforming velocity, rotation, and location based on portal transforms.  
@@ -18,7 +19,7 @@
 ### Fix in `SP_PortalHub`:  
 - `ResolvePortalPairs()` get reference for PortalPair  
   
-### [2.0.0] - 2024-02-18
+## [2.0.0] - 2024-02-18
 
 ### Added SPL_Library:
 
@@ -166,6 +167,6 @@
 - Modified the `TrackPortal` function at lines 319-393 to ensure that the tracking logic is only executed for locally owned characters.
 
 
-### [1.0.0] - 2023-06-13
+## [1.0.0] - 2023-06-13
 
 Initial Release

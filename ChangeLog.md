@@ -1,6 +1,7 @@
 # Change Log
 
-### [2.0.1] - 2024-03-08  
+## Version 2.0.1 - 2024-03-08  
+  
 ### Changes in `SP_PortalActorComponent`:  
 - Added 4 new helpers for working with custom Player Camera Managers  
   - Added helper functions for transforming velocity, rotation, and location based on portal transforms.  
