@@ -2,6 +2,9 @@
 
 ## Version 2.0.1 - 2024-03-10  
   
+### Added Portals/Material/M_Mirror master and Portals/Material/MI_Mirror instance  
+- For using portals as a mirror  
+  
 ### Changes in `SP_PortalActorComponent`:  
 - Added 5 new helpers for working with custom Player Camera Managers  
   - Added helper functions for transforming velocity, rotation, and location based on portal transforms.  
