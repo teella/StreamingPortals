@@ -1,4 +1,4 @@
-## [2.0.1] - 2024-03-09 
+## [2.0.1] - 2024-03-10 
   
 ### Changes in `SP_PortalActorComponent`:  
 - Added 4 new helpers for working with custom Player Camera Managers  
@@ -22,6 +22,7 @@
   
 ### Changes in `SP_PortalActor`:  
 - added helper GetStartCapture(), A helper function to check if the portal is actively running a scene capture  
+- Added IsMirror settings. Turns the portal into a mirror.  
   
 ### Changes in `SPL_Library`:  
 - Logging  
